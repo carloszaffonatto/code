@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  code-server:
+    container_name: code-server-pub
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - TZ=Europe/London
+      - PROXY_DOMAIN=x.com
+    ports:
+      - 8443:8443
+    volumes:
+      - /docker/code-server-pub/config:/config
+    restart: always
+    image: lscr.io/linuxserver/code-server:latest
