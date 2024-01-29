@@ -5,7 +5,7 @@
 # nano /usr/bin/gotify-ssh-login.sh
 # Ensure that the script has execute permissions using the chmod +x /usr/bin/gotify-ssh-login.sh command.
 # Add to the end of PAM configuration file (/etc/pam.d/sshd): session optional pam_exec.so /usr/bin/gotify-ssh-login.sh
-#
+# The module is included as optional, so that you can still log in if the execution fails. You could change optional to required. However, this will prevent any SSH login unless the script is run successfully.
 
 # Hide script output
 exec &> /dev/null
