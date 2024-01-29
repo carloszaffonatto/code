@@ -29,8 +29,9 @@ send_notification() {
 
 notify()
 {
-    host="$(/bin/hostname -f)"
-    message="User $PAM_USER from $PAM_RHOST"
+    host="$(/bin/hostname -f)" # hostname
+    ip="$(dig +short myip.opendns.com @resolver1.opendns.com)" # public IP
+    message="User $PAM_USER IP $PAM_RHOST Public IP $ip" # user, IP and Public IP
 
     # Handle different PAM type events
     if [[ "$PAM_TYPE" == "open_session" ]]; then
