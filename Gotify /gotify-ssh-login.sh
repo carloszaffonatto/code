@@ -30,20 +30,21 @@ send_notification() {
 notify()
 {
     host="$(/bin/hostname -f)" # hostname
+    hostip="$(hostname -I | awk '{print $1}')" # host ip
     ip="$(dig +short myip.opendns.com @resolver1.opendns.com)" # public IP
     message="User $PAM_USER IP $PAM_RHOST Public IP $ip" # user, IP and Public IP
 
     # Handle different PAM type events
     if [[ "$PAM_TYPE" == "open_session" ]]; then
-        title="SSH Login for $host"
+        title="SSH Login for $host $hostip"
         send_notification "$title" "$message"
 
     elif [[ "$PAM_TYPE" == "close_session" ]]; then
-        title="SSH Logout for $host"
+        title="SSH Logout for $host $hostip"
         send_notification "$title" "$message"
 
     elif [[ "$PAM_TYPE" == "auth" ]]; then
-        title="Authentication Attempt for $host"
+        title="Authentication Attempt for $host $hostip"
         send_notification "$title" "$message"
     fi
 }
