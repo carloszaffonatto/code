@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  glances:
+    container_name: glances
+    image: nicolargo/glances:latest-full
+    restart: always
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    pid: host
+    network_mode: host
+    stdin_open: true
+    tty: true
