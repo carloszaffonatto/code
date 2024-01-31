@@ -1,11 +1,15 @@
+# Web server mode
 version: "3.3"
 services:
   glances:
     container_name: glances
     image: nicolargo/glances:latest-full
     restart: always
+    ports:
+      - 61208-61209:61208-61209
     environment:
       - TZ=${TZ}
+      - GLANCES_OPT=-w
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     pid: host
