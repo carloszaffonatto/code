@@ -7,19 +7,22 @@
 # -p 5443:5443/tcp -p 5443:5443/udp: add if you are going to run AdGuard Home as a DNSCrypt server.
 # -p 6060:6060/tcp: debugging profiles.
 
-docker run --name adguardhome \
+docker run \
+    --name adguardhome \
     --restart always \
+    --network host \
     -v /docker/adguard/work:/opt/adguardhome/work \
     -v /docker/adguard/conf:/opt/adguardhome/conf \
     -p 53:53/tcp -p 53:53/udp\
     -p 67:67/udp -p 68:68/udp\
-    -p 80:80/tcp -p 443:443/tcp -p 443:443/udp -p 3000:3000/tcp\
-    -p 853:853/tcp\
-    -p 853:853/udp\
-    -p 5443:5443/tcp -p 5443:5443/udp\
-    -p 6060:6060/tcp\
+    -p 80:80/tcp \
+    -p 443:443/tcp -p 443:443/udp \
+    -p 3000:3000/tcp \
+    -p 853:853/tcp \
+    -p 853:853/udp \
+    -p 5443:5443/tcp -p 5443:5443/udp \
+    -p 6060:6060/tcp \
     -d adguard/adguardhome
-
 
 # If you try to run AdGuardHome on a system where the resolved daemon is started, docker will fail to bind on port 53, because resolved daemon is listening on 127.0.0.53:53. Here's how you can disable DNSStubListener on your machine:
 # 
