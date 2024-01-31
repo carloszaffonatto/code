@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    restart: always
+    volumes:
+      - /docker/komga/conf:/config
+      - /mnt/Media:/Media
+    ports:
+      - 25600:25600
