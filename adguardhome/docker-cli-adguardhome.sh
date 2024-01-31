@@ -22,7 +22,7 @@ docker run -d \
     -p 853:853/udp \
     -p 5443:5443/tcp -p 5443:5443/udp \
     -p 6060:6060/tcp \
-    -d adguard/adguardhome
+adguard/adguardhome
 
 # If you try to run AdGuardHome on a system where the resolved daemon is started, docker will fail to bind on port 53, because resolved daemon is listening on 127.0.0.53:53. Here's how you can disable DNSStubListener on your machine:
 # 
