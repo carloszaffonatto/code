@@ -7,7 +7,7 @@
 # -p 5443:5443/tcp -p 5443:5443/udp: add if you are going to run AdGuard Home as a DNSCrypt server.
 # -p 6060:6060/tcp: debugging profiles.
 
-docker run \
+docker run -d \
     --name adguardhome \
     --restart always \
     --network host \
