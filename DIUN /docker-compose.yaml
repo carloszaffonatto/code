@@ -20,6 +20,13 @@ services:
       - "DIUN_NOTIF_GOTIFY_TOKEN=xxx" # get your token from Gotify UI
       - "DIUN_NOTIF_GOTIFY_PRIORITY=1"
       - "DIUN_NOTIF_GOTIFY_TIMEOUT=10s"
+      - "DIUN_NOTIF_GOTIFY_TEMPLATETITLE: {{ .Entry.Image }} released"
+      - "DIUN_NOTIF_GOTIFY_TEMPLATEBODY: Docker tag {{ .Entry.Image }} which you subscribed to through {{ .Entry.Provider }} provider has been released."
+
+      - "DIUN_NOTIF_NTFY_ENDPOINT=https://xxx"
+      - "DIUN_NOTIF_NTFY_TOKEN=xxx" # get your token from Gotify UI
+      - "DIUN_NOTIF_NTFY_PRIORITY=1"
+      - "DIUN_NOTIF_NTFY_TIMEOUT=10s"
 
       - "DIUN_NOTIF_DISCORD_WEBHOOKURL=https://discord.com/api/webhooks/xxx" # change to your webhook
       # - "DIUN_NOTIF_DISCORD_MENTIONS" # (comma separated)
