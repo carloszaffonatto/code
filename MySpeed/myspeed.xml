@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>myspeed</short>
+  <description>Ports required by myspeed.</description>
+  <port protocol="tcp" port="5216"></port>
+</service>
