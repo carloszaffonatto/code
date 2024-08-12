@@ -1,18 +1,19 @@
-# Web server mode
-version: "3.3"
 services:
   glances:
     container_name: glances
-    image: nicolargo/glances:latest-full
+    image: nicolargo/glances:latest
     restart: always
     ports:
-      - 61208-61209:61208-61209
-    environment:
-      - TZ=${TZ}
-      - GLANCES_OPT=-w
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "80:80"
+      - "8080:8080"
     pid: host
-    network_mode: host
-    stdin_open: true
+#   network_mode: host
     tty: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/os-release:/etc/os-release:ro
+    environment:
+      - "GLANCES_OPT=-w"
+
+# Notes
+# network host, port 61208
