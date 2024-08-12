@@ -1,0 +1,30 @@
+GitHub - linuxserver/docker-speedtest-tracker
+
+https://speedtest-tracker.dev/
+
+# docker exec speedtest-tracker php /app/www/artisan app:ookla-list-servers
+
+ ┌───────┬───────────────────────────────────┬─────────────────┬────────────────┬──────────┐
+ │ id    │ sponsor                           │ name            │ country        │ distance │
+ ├───────┼───────────────────────────────────┼─────────────────┼────────────────┼──────────┤
+ │ 23389 │ Vodafone UK                       │ Bracknell       │ United Kingdom │ 31       │
+ │ 62486 │ Cilix Limited                     │ Andover         │ United Kingdom │ 5        │
+ │ 50235 │ Contabo                           │ Portsmouth      │ United Kingdom │ 29       │
+ │ 27620 │ Wightfibre Limited                │ Cowes           │ United Kingdom │ 29       │
+ │ 11770 │ Iomart                            │ Gosport         │ United Kingdom │ 30       │
+ │ 55637 │ University of Oxford, IT Services │ Abingdon        │ United Kingdom │ 34       │
+ │ 40377 │ Iomart                            │ Maidenhead      │ United Kingdom │ 37       │
+ │ 28459 │ University of Oxford, IT Services │ Oxford          │ United Kingdom │ 39       │
+ │ 62561 │ Public Internet Ltd               │ Oxford          │ United Kingdom │ 39       │
+ │ 57318 │ Zzoomm Plc                        │ Slough          │ United Kingdom │ 41       │
+ │ 59923 │ Connect Fibre                     │ Slough          │ United Kingdom │ 41       │
+ │ 63030 │ FibreNest                         │ Slough          │ United Kingdom │ 41       │
+ │ 54746 │ Trooli                            │ Slough          │ United Kingdom │ 41       │
+ │ 36402 │ Wessex Internet Ltd.              │ Blandford Forum │ United Kingdom │ 41       │
+ │ 31171 │ Vodafone UK                       │ Watford         │ United Kingdom │ 54       │
+ │ 14679 │ Hyperoptic Limited                │ London          │ United Kingdom │ 59       │
+ │ 34881 │ Upp Corporation Ltd               │ London          │ United Kingdom │ 59       │
+ │ 32950 │ Box Broadband Ltd                 │ London          │ United Kingdom │ 59       │
+ │ 55137 │ YouFibre                          │ London          │ United Kingdom │ 60       │
+ │ 30690 │ Community Fibre Limited           │ London          │ United Kingdom │ 60       │
+ └───────┴───────────────────────────────────┴─────────────────┴────────────────┴──────────┘
