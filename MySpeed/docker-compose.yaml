@@ -1,0 +1,9 @@
+services:
+  myspeed:
+    container_name: myspeed
+    image: germannewsmaker/myspeed
+    restart: unless-stopped
+    ports:
+      - 5216:5216
+    volumes:
+      - /docker/myspeed:/myspeed/data
