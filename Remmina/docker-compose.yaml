@@ -1,0 +1,14 @@
+services:
+  remmina:
+    image: lscr.io/linuxserver/remmina:latest
+    container_name: remmina
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /docker/remmina:/config
+    ports:
+      - 3000:3000
+      - 3001:3001
