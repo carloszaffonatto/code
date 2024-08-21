@@ -1,0 +1,11 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: Grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - /docker/grafana:/var/lib/grafana 
+    user: "1000:1000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
