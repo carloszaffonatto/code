@@ -1,15 +1,19 @@
-version: "3.3"
 services:
   code-server:
-    container_name: code-server-pub
+    container_name: code-server
     environment:
       - PUID=1001
       - PGID=1001
       - TZ=Europe/London
       - PROXY_DOMAIN=x.com
+      - PASSWORD=$PASSWORD
+#     - HASHED_PASSWORD=$HASHED_PASSWORD
+      - SUDO_PASSWORD=$SUDO_PASSWORD
+#     - SUDO_PASSWORD_HASH=$SUDO_PASSWORD_HASH
+#     - DEFAULT_WORKSPACE:/config/workspace
     ports:
       - 8443:8443
     volumes:
-      - /docker/code-server-pub/config:/config
+      - /docker/code-server/config:/config
     restart: always
     image: lscr.io/linuxserver/code-server:latest
