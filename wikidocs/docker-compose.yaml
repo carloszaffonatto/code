@@ -1,0 +1,12 @@
+services:
+  wikidocs:
+    image: zavy86/wikidocs:latest
+    container_name: wikidocs
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 80:80
+    volumes:
+      - /docker/wikidocs/datasets:/datasets
